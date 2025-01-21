@@ -53,8 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
         batterySoC = response.batterySoC;
         batteryVoltage = response.batteryVoltage;
       });
-    } catch (e) {
-      debugPrint("sending failed");
+    } on DioException catch (e) {
+      debugPrint("sending failed: ${e.message}");
     }
   }
 
