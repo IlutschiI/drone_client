@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'request.dart';
+part of 'gamepad_event.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,45 +14,40 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Request _$RequestFromJson(Map<String, dynamic> json) {
-  return _Request.fromJson(json);
-}
-
 /// @nodoc
-mixin _$Request {
+mixin _$GamepadEvent {
   double get power => throw _privateConstructorUsedError;
   double get pitch => throw _privateConstructorUsedError;
   double get yaw => throw _privateConstructorUsedError;
   double get roll => throw _privateConstructorUsedError;
 
-  /// Serializes this Request to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Request
+  /// Create a copy of GamepadEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RequestCopyWith<Request> get copyWith => throw _privateConstructorUsedError;
+  $GamepadEventCopyWith<GamepadEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RequestCopyWith<$Res> {
-  factory $RequestCopyWith(Request value, $Res Function(Request) then) =
-      _$RequestCopyWithImpl<$Res, Request>;
+abstract class $GamepadEventCopyWith<$Res> {
+  factory $GamepadEventCopyWith(
+          GamepadEvent value, $Res Function(GamepadEvent) then) =
+      _$GamepadEventCopyWithImpl<$Res, GamepadEvent>;
   @useResult
   $Res call({double power, double pitch, double yaw, double roll});
 }
 
 /// @nodoc
-class _$RequestCopyWithImpl<$Res, $Val extends Request>
-    implements $RequestCopyWith<$Res> {
-  _$RequestCopyWithImpl(this._value, this._then);
+class _$GamepadEventCopyWithImpl<$Res, $Val extends GamepadEvent>
+    implements $GamepadEventCopyWith<$Res> {
+  _$GamepadEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Request
+  /// Create a copy of GamepadEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -84,24 +79,25 @@ class _$RequestCopyWithImpl<$Res, $Val extends Request>
 }
 
 /// @nodoc
-abstract class _$$RequestImplCopyWith<$Res> implements $RequestCopyWith<$Res> {
-  factory _$$RequestImplCopyWith(
-          _$RequestImpl value, $Res Function(_$RequestImpl) then) =
-      __$$RequestImplCopyWithImpl<$Res>;
+abstract class _$$GamepadEventImplCopyWith<$Res>
+    implements $GamepadEventCopyWith<$Res> {
+  factory _$$GamepadEventImplCopyWith(
+          _$GamepadEventImpl value, $Res Function(_$GamepadEventImpl) then) =
+      __$$GamepadEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double power, double pitch, double yaw, double roll});
 }
 
 /// @nodoc
-class __$$RequestImplCopyWithImpl<$Res>
-    extends _$RequestCopyWithImpl<$Res, _$RequestImpl>
-    implements _$$RequestImplCopyWith<$Res> {
-  __$$RequestImplCopyWithImpl(
-      _$RequestImpl _value, $Res Function(_$RequestImpl) _then)
+class __$$GamepadEventImplCopyWithImpl<$Res>
+    extends _$GamepadEventCopyWithImpl<$Res, _$GamepadEventImpl>
+    implements _$$GamepadEventImplCopyWith<$Res> {
+  __$$GamepadEventImplCopyWithImpl(
+      _$GamepadEventImpl _value, $Res Function(_$GamepadEventImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Request
+  /// Create a copy of GamepadEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -111,7 +107,7 @@ class __$$RequestImplCopyWithImpl<$Res>
     Object? yaw = null,
     Object? roll = null,
   }) {
-    return _then(_$RequestImpl(
+    return _then(_$GamepadEventImpl(
       power: null == power
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
@@ -133,70 +129,58 @@ class __$$RequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$RequestImpl implements _Request {
-  const _$RequestImpl(
-      {required this.power,
-      required this.pitch,
-      required this.yaw,
-      required this.roll});
 
-  factory _$RequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RequestImplFromJson(json);
+class _$GamepadEventImpl implements _GamepadEvent {
+  const _$GamepadEventImpl(
+      {this.power = 0, this.pitch = 0, this.yaw = 0, this.roll = 0});
 
   @override
+  @JsonKey()
   final double power;
   @override
+  @JsonKey()
   final double pitch;
   @override
+  @JsonKey()
   final double yaw;
   @override
+  @JsonKey()
   final double roll;
 
   @override
   String toString() {
-    return 'Request(power: $power, pitch: $pitch, yaw: $yaw, roll: $roll)';
+    return 'GamepadEvent(power: $power, pitch: $pitch, yaw: $yaw, roll: $roll)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RequestImpl &&
+            other is _$GamepadEventImpl &&
             (identical(other.power, power) || other.power == power) &&
             (identical(other.pitch, pitch) || other.pitch == pitch) &&
             (identical(other.yaw, yaw) || other.yaw == yaw) &&
             (identical(other.roll, roll) || other.roll == roll));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, power, pitch, yaw, roll);
 
-  /// Create a copy of Request
+  /// Create a copy of GamepadEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
-      __$$RequestImplCopyWithImpl<_$RequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RequestImplToJson(
-      this,
-    );
-  }
+  _$$GamepadEventImplCopyWith<_$GamepadEventImpl> get copyWith =>
+      __$$GamepadEventImplCopyWithImpl<_$GamepadEventImpl>(this, _$identity);
 }
 
-abstract class _Request implements Request {
-  const factory _Request(
-      {required final double power,
-      required final double pitch,
-      required final double yaw,
-      required final double roll}) = _$RequestImpl;
-
-  factory _Request.fromJson(Map<String, dynamic> json) = _$RequestImpl.fromJson;
+abstract class _GamepadEvent implements GamepadEvent {
+  const factory _GamepadEvent(
+      {final double power,
+      final double pitch,
+      final double yaw,
+      final double roll}) = _$GamepadEventImpl;
 
   @override
   double get power;
@@ -207,10 +191,10 @@ abstract class _Request implements Request {
   @override
   double get roll;
 
-  /// Create a copy of Request
+  /// Create a copy of GamepadEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
+  _$$GamepadEventImplCopyWith<_$GamepadEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

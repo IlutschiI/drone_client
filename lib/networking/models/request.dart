@@ -5,7 +5,13 @@ part 'request.g.dart';
 
 @freezed
 class Request with _$Request {
-  const factory Request({ required int power }) = _Request;
+  const factory Request({
+    required double power,
+    required double pitch,
+    required double yaw,
+    required double roll,
+  }) = _Request;
 
-  factory Request.fromJson(Map<String, dynamic> json) => _$RequestFromJson(json);
-} 
+  factory Request.fromJson(Map<String, dynamic> json) =>
+      _$RequestFromJson(json);
+}
