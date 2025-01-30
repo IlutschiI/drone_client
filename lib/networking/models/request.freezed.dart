@@ -24,6 +24,7 @@ mixin _$Request {
   double get pitch => throw _privateConstructorUsedError;
   double get yaw => throw _privateConstructorUsedError;
   double get roll => throw _privateConstructorUsedError;
+  int get timestamp => throw _privateConstructorUsedError;
 
   /// Serializes this Request to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +40,8 @@ abstract class $RequestCopyWith<$Res> {
   factory $RequestCopyWith(Request value, $Res Function(Request) then) =
       _$RequestCopyWithImpl<$Res, Request>;
   @useResult
-  $Res call({double power, double pitch, double yaw, double roll});
+  $Res call(
+      {double power, double pitch, double yaw, double roll, int timestamp});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$RequestCopyWithImpl<$Res, $Val extends Request>
     Object? pitch = null,
     Object? yaw = null,
     Object? roll = null,
+    Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
       power: null == power
@@ -79,6 +82,10 @@ class _$RequestCopyWithImpl<$Res, $Val extends Request>
           ? _value.roll
           : roll // ignore: cast_nullable_to_non_nullable
               as double,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -90,7 +97,8 @@ abstract class _$$RequestImplCopyWith<$Res> implements $RequestCopyWith<$Res> {
       __$$RequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double power, double pitch, double yaw, double roll});
+  $Res call(
+      {double power, double pitch, double yaw, double roll, int timestamp});
 }
 
 /// @nodoc
@@ -110,6 +118,7 @@ class __$$RequestImplCopyWithImpl<$Res>
     Object? pitch = null,
     Object? yaw = null,
     Object? roll = null,
+    Object? timestamp = null,
   }) {
     return _then(_$RequestImpl(
       power: null == power
@@ -128,6 +137,10 @@ class __$$RequestImplCopyWithImpl<$Res>
           ? _value.roll
           : roll // ignore: cast_nullable_to_non_nullable
               as double,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -139,7 +152,8 @@ class _$RequestImpl implements _Request {
       {required this.power,
       required this.pitch,
       required this.yaw,
-      required this.roll});
+      required this.roll,
+      required this.timestamp});
 
   factory _$RequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$RequestImplFromJson(json);
@@ -152,10 +166,12 @@ class _$RequestImpl implements _Request {
   final double yaw;
   @override
   final double roll;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'Request(power: $power, pitch: $pitch, yaw: $yaw, roll: $roll)';
+    return 'Request(power: $power, pitch: $pitch, yaw: $yaw, roll: $roll, timestamp: $timestamp)';
   }
 
   @override
@@ -166,12 +182,15 @@ class _$RequestImpl implements _Request {
             (identical(other.power, power) || other.power == power) &&
             (identical(other.pitch, pitch) || other.pitch == pitch) &&
             (identical(other.yaw, yaw) || other.yaw == yaw) &&
-            (identical(other.roll, roll) || other.roll == roll));
+            (identical(other.roll, roll) || other.roll == roll) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, power, pitch, yaw, roll);
+  int get hashCode =>
+      Object.hash(runtimeType, power, pitch, yaw, roll, timestamp);
 
   /// Create a copy of Request
   /// with the given fields replaced by the non-null parameter values.
@@ -194,7 +213,8 @@ abstract class _Request implements Request {
       {required final double power,
       required final double pitch,
       required final double yaw,
-      required final double roll}) = _$RequestImpl;
+      required final double roll,
+      required final int timestamp}) = _$RequestImpl;
 
   factory _Request.fromJson(Map<String, dynamic> json) = _$RequestImpl.fromJson;
 
@@ -206,6 +226,8 @@ abstract class _Request implements Request {
   double get yaw;
   @override
   double get roll;
+  @override
+  int get timestamp;
 
   /// Create a copy of Request
   /// with the given fields replaced by the non-null parameter values.

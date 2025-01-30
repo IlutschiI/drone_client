@@ -10,6 +10,7 @@ class Request with _$Request {
     required double pitch,
     required double yaw,
     required double roll,
+    required int timestamp,
   }) = _Request;
 
   factory Request.fromJson(Map<String, dynamic> json) =>

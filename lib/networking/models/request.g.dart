@@ -12,6 +12,7 @@ _$RequestImpl _$$RequestImplFromJson(Map<String, dynamic> json) =>
       pitch: (json['pitch'] as num).toDouble(),
       yaw: (json['yaw'] as num).toDouble(),
       roll: (json['roll'] as num).toDouble(),
+      timestamp: (json['timestamp'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$RequestImplToJson(_$RequestImpl instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$RequestImplToJson(_$RequestImpl instance) =>
       'pitch': instance.pitch,
       'yaw': instance.yaw,
       'roll': instance.roll,
+      'timestamp': instance.timestamp,
     };

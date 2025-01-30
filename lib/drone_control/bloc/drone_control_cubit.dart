@@ -13,8 +13,10 @@ import 'package:get_it/get_it.dart';
 class DroneControlCubit extends Cubit<DroneControlState> {
   late final StreamSubscription _gamepadSubscription;
   late final DroneService _droneService;
+  final Stopwatch _stopwatch = Stopwatch();
 
   DroneControlCubit() : super(DroneControlState()) {
+    _stopwatch.start();
     _gamepadSubscription = GetIt.instance
         .get<GamepadService>()
         .events()
@@ -27,10 +29,12 @@ class DroneControlCubit extends Cubit<DroneControlState> {
 
     try {
       final request = Request(
-          power: event.power,
-          pitch: event.pitch,
-          roll: event.roll,
-          yaw: event.yaw);
+        power: event.power,
+        pitch: event.pitch,
+        roll: event.roll,
+        yaw: event.yaw,
+        timestamp: _stopwatch.elapsedMilliseconds,
+      );
       final response = await _droneService.sendRequest(request);
       emit(
         state.copyWith(
